@@ -2,20 +2,6 @@ int MAXUNITS = 10;
 int winLength = 1024;
 int winHeight = 576;
 
-// BASE CLASS
-class Base {
-  
-}
-
-class Unit {
-  int type; // 1 = MELEE | 2 = RANGED | 3 = HEAVY
-  PVector pos;
-  
-  Unit() {
-    pos = new PVector(0, 0);
-  }
-}
-
 Base[] base = new Base[2];
 Unit[] unit = new Unit[MAXUNITS];
 
