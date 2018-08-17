@@ -6,6 +6,7 @@ int winHeight = 576;
 int tileLength = winLength / tileSize;
 int tileHeight = winHeight / tileSize;
 int groundLevel = 10;
+boolean showGrid = false;
 
 Base[] base = new Base[2];
 Unit[] unit = new Unit[MAXUNITS];
@@ -36,12 +37,20 @@ void draw() {
   }
   
   // GRID FOR TESTING
-  /*
-  for (int i = 0; i < winLength; i += tileSize) {
-    line(i, 0, i, winHeight);
+  if (showGrid) {
+    for (int i = 0; i < winLength; i += tileSize) {
+      line(i, 0, i, winHeight);
+    }
+    
+    for (int i = 0; i < winHeight; i += tileSize) {
+      line(0, i, winLength, i);
+    }
   }
-  
-  for (int i = 0; i < winHeight; i += tileSize) {
-    line(0, i, winLength, i);
-  }*/
+}
+
+void keyTyped() {
+  if (key == 'G') {
+    if (showGrid) showGrid = false;
+    else showGrid = true;
+  }
 }
