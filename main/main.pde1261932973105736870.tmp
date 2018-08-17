@@ -58,15 +58,14 @@ void draw() {
   }
   
   if (frame % 30 == 0) {
-    if (totEnemies <= 5) {
-      float rand = random(10);
-      if (rand > 8) {
-        unit[lastUnit++] = new Unit(1, 2);
-      }
+    
+    float rand = random(10);
+    if (rand > 8) {
+      
     }
   }
 
-  totEnemies = 0;
+  
   image(menu, winLength - 512, 0);
   
   // GRID FOR TESTING
