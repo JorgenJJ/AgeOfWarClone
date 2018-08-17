@@ -57,11 +57,11 @@ void draw() {
     if (unit[i].isEnemy()) totEnemies++;
   }
   
-  if (frame % 30 == 0) {
-    if (totEnemies <= 5) {
+  if (frame % 60 == 0) {
+    if (totEnemies < 5) {
       float rand = random(10);
       if (rand > 8) {
-        unit[lastUnit++] = new Unit(1, 2);
+        if (lastUnit != maxUnits) unit[lastUnit++] = new Unit(1, 2);
       }
     }
   }
@@ -88,6 +88,6 @@ void keyTyped() {
   }
   
   if (key == '1') {
-    unit[lastUnit++] = new Unit(1, 1);
+    if (lastUnit != maxUnits) unit[lastUnit++] = new Unit(1, 1);
   }
 }
